@@ -297,7 +297,7 @@ function head(){return '<header><div class="wrap"><a class="brand" href="#/">'+l
 function foot(){var c=S.contact;return '<footer><div class="wrap"><a class="brand" href="#/">'+logo()+'NFCS FUTO</a><p>Nigerian Federation of Catholic Students, St. Thomas Aquinas Chaplaincy, Federal University of Technology Owerri. Affiliated with Pax Romana (IMCS).</p><p>'+esc(c.email)+' | '+esc(c.phone)+' | '+esc(c.social)+'</p><p><a href="admin.html" target="_blank" rel="noopener">Admin Desk</a></p></div></footer>'}
 function bankBox(){var b=S.bank;return '<div class="bank"><p>Bank: <strong>'+esc(b.bank)+'</strong></p><p>Account name: <strong>'+esc(b.name)+'</strong></p><p>Account no: <strong>'+esc(b.no)+'</strong></p></div>'}
 function heroBg(){return S.media.hero?' style="background-image:linear-gradient(rgba(6,14,70,.75),rgba(6,14,70,.87)),url('+S.media.hero+')"':''}
-function slideBg(u){return 'background-image:linear-gradient(rgba(6,14,70,.75),rgba(6,14,70,.87)),url('+u+')'}
+function slideBg(u){return 'background-image:linear-gradient(rgba(6,14,70,.40),rgba(6,14,70,.55)),url('+u+')'}
 function heroImgs(){return (S.media.heroImages&&S.media.heroImages.length)?S.media.heroImages:(S.media.hero?[S.media.hero]:[])}
 function heroSlidesHtml(){return heroImgs().map(function(u,i){return '<div class="heroSlide'+(i===0?' show':'')+'" style="'+slideBg(u)+'"></div>'}).join('')}
 var heroTimer=null;
