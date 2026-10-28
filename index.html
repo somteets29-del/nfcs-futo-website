@@ -1,11 +1,612 @@
+
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" style="color-scheme: dark;"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self' https://docs.google.com; frame-ancestors 'self'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<title>NFCS FUTO | Living the Faith</title>
-<link rel="icon" href="data:image/jpeg;base64,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">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b50">
+  <meta name="description" content="The official website of the Nigerian Federation of Catholic Students, Federal University of Technology Owerri (NFCS-FUTO).">
+  <title>NFCS-FUTO | Faith, Fellowship & Service</title>
+
+  <style>
+    :root {
+      --navy: #102b50;
+      --blue: #1d4777;
+      --gold: #d6ad52;
+      --white: #ffffff;
+      --cream: #f7f5ef;
+      --text: #253247;
+      --muted: #68758a;
+      --border: #e5e8ee;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #a77b20;
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: white !important;
+      padding: 11px 16px;
+      border-radius: 4px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      color: white;
+      padding: 100px 0 105px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -100px;
+      top: -130px;
+      border: 1px solid rgba(214, 173, 82, 0.35);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      right: -45px;
+      top: -75px;
+      border: 1px solid rgba(214, 173, 82, 0.25);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 20px 0;
+      max-width: 720px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #dce5f0;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 21px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .button-outline {
+      border-color: rgba(255,255,255,.55);
+      color: white;
+    }
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-cream {
+      background: var(--cream);
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      margin: 12px 0;
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-copy h3 {
+      color: var(--navy);
+      font-size: 23px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+    }
+
+    .quote-card {
+      background: var(--navy);
+      color: white;
+      padding: 32px;
+      border-left: 4px solid var(--gold);
+      border-radius: 5px;
+    }
+
+    .quote-card h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .quote-card p {
+      margin-bottom: 0;
+      color: #e1e8f1;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .card-number {
+      color: #b78b30;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      margin: 14px 0 10px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .membership {
+      background: var(--navy);
+      color: white;
+      padding: 65px 0;
+    }
+
+    .membership-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .membership h2 {
+      margin: 12px 0;
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.2;
+    }
+
+    .membership p {
+      max-width: 650px;
+      margin-bottom: 0;
+      color: #dce5f0;
+    }
+
+    .membership .button {
+      flex-shrink: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-panel {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
+
+    .contact-panel h3 {
+      color: var(--navy);
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: #091b32;
+      color: #dce5f0;
+      padding: 28px 0;
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--gold);
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        justify-content: flex-start;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 72px 0 78px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .membership-grid {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    NIGERIAN FEDERATION OF CATHOLIC STUDENTS · FUTO
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="NFCS-FUTO home">
+        <span class="brand-mark">NFCS</span>
+        <span class="brand-name">
+          NFCS-FUTO
+          <span class="brand-subtitle">FAITH · FELLOWSHIP · SERVICE</span>
+        </span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#membership">Membership</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <span class="eyebrow">Catholic students. One community.</span>
+
+        <h1>Faith that unites.<br>Service that matters.</h1>
+
+        <p>
+          Welcome to the Nigerian Federation of Catholic Students,
+          Federal University of Technology Owerri. A student community
+          committed to growing in faith, building meaningful fellowship
+          and living out Christian values.
+        </p>
+
+        <div class="actions">
+          <a class="button button-gold" href="#about">Discover NFCS-FUTO</a>
+          <a class="button button-outline" href="#membership">Explore Membership</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">Who we are</span>
+          <h3>A community of faith and purpose.</h3>
+
+          <p>
+            The Nigerian Federation of Catholic Students (NFCS) is a
+            community for Catholic students to deepen their faith,
+            strengthen their relationship with God and support one
+            another through their university journey.
+          </p>
+
+          <p>
+            At the Federal University of Technology Owerri, NFCS-FUTO
+            provides a space for spiritual growth, fellowship, personal
+            development and service to others.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <h3>Our Purpose</h3>
+          <p>
+            To encourage a living Catholic faith, nurture a sense of
+            community among students and inspire members to reflect
+            Christian values in their studies, relationships and service.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="activities">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Life in NFCS</span>
+          <h2>Growing together in faith.</h2>
+          <p>
+            A community is built through shared faith, meaningful
+            relationships and a willingness to serve.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card-number">01 / FAITH</span>
+            <h3>Spiritual Growth</h3>
+            <p>
+              Opportunities to strengthen Catholic faith through prayer,
+              reflection and participation in the life of the Church.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">02 / COMMUNITY</span>
+            <h3>Fellowship</h3>
+            <p>
+              Building friendships, supporting fellow students and
+              creating a sense of belonging within the Catholic community.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number">03 / SERVICE</span>
+            <h3>Service to Others</h3>
+            <p>
+              Encouraging compassion, responsibility and practical care
+              for people within and beyond the university community.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="membership" id="membership">
+      <div class="container membership-grid">
+        <div>
+          <span class="eyebrow">Find your community</span>
+          <h2>Your university journey<br>has room for faith.</h2>
+          <p>
+            Interested in learning more about NFCS-FUTO? Connect with
+            the community to find out about membership and activities.
+          </p>
+        </div>
+
+        <a class="button button-gold" href="#contact">
+          Get in Touch
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Connect with us</span>
+          <h2>Stay connected.</h2>
+          <p>
+            For membership enquiries, fellowship information or other
+            questions, reach out through the appropriate NFCS-FUTO channel.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>Visit our community</h3>
+            <p>
+              Federal University of Technology Owerri (FUTO),
+              Imo State, Nigeria.
+            </p>
+          </div>
+
+          <div class="contact-panel">
+            <h3>Get in touch</h3>
+            <p>
+              Official contact details and social media links can be
+              added here once confirmed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 NFCS-FUTO. All rights reserved.</p>
+      <p>Faith · Fellowship · Service</p>
+    </div>
+  </footer>
+</body>
+</html>
+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ILW7WF1cdVz6V6SLDxp31vSD/3Dm/+OUv2Dxn/ANBrSf8AwXt/8crN4Km3e5tDNK0IqKWysb2jecdOtftMTQz+Uu+Nm3FTjoSOtYnxJ0CTxL4TvtPtdv2p1zCWOAH7E0z+z/Gf/Qb0kf8AcPb/AOOVJFo/iKaQDUNeh+z4+ZbS08pyfZixx+VbTppx5W9DjhWlGXNFao5tfA+j29poU2ty20B06ItJbxbVhmkI5Yg8n1rQ0K30a0Rh4W8P+YDI0wmePy4w57hn5/75FdJp3h6wsnEogM1xnmadvMc/ia2gPbipjShD4Uazr1qnxSOcWw1W8jI1LURbhusdkMEf8DPP8qv6folhZgGG3UydTLJ8zn6sea1sUVpcyUUhiIFPAp9FFIoCOKZsHvn1zT6KAGhQOlKKWigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAMUgFLRRYBpWlC4paKADFJilopWQCYoIpaKLAIBS0UUwCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 :root{--ivory:#f6f1e8;--ivory-deep:#ebe3d4;--paper:#fbf8f2;--navy:#1b2a4a;--navy-deep:#121c33;--navy-soft:#2c4068;--gold:#c4a35a;--gold-deep:#9e8243;--wine:#7a3b48;--ink:#1a1714;--muted:#6b645c;--line:#ddd3c3;--r:12px;
